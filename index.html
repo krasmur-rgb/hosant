@@ -11,6 +11,7 @@ html{scroll-behavior:smooth}body{overflow-wrap:break-word}button,a,input,textare
 @media(max-width:680px){.wrap{width:calc(100% - 36px)}header .wrap{padding:19px 0;gap:18px}.brand{font-size:23px}nav{width:100%;justify-content:space-between;gap:10px}nav a{font-size:11px}nav a:last-child{display:none}.hero{padding:34px 0}.hero-top,.section-head,.works article,.audit{grid-template-columns:1fr;gap:22px}h1{font-size:clamp(39px,10vw,62px);max-width:17ch}.hero .eyebrow{margin-bottom:18px}.hero .lead{font-size:16px;max-width:45ch}.hero-note{font-size:12px}.journey{margin-top:32px;padding:22px 18px}.journey-head{display:block}.tabs{width:fit-content;margin-top:20px}.route-track{grid-template-columns:1fr;margin:27px 0 12px;gap:0}.route-track li{display:grid;grid-template-columns:34px 1fr;column-gap:14px;padding-bottom:21px}.route-track li:not(:last-child):after{width:1px;height:auto;left:16px;right:auto;top:30px;bottom:0}.node-dot{grid-row:1/3;margin:0}.route-track h3{margin:2px 0 2px}.route-track p{max-width:none;min-height:0}.journey-foot{gap:16px}.reply{min-height:106px;font-size:13px}.band{padding:38px 0 44px}.section-head{margin-bottom:20px}.section-head p{font-size:14px}.grid{grid-template-columns:1fr;margin-top:20px}.tile{padding:20px 0}.tile h3{font-size:21px}.works article{padding:30px 0;gap:22px}.works h3{font-size:29px;max-width:22ch}.work-visual{padding:20px}.approval-title{gap:12px}.approval-title span{max-width:80px;text-align:right}.audit{gap:28px}.inner{padding-top:30px}.inner h1{font-size:38px}.row{grid-template-columns:1fr;gap:5px}.row dt{font-size:14px;color:#61748b}footer .wrap{align-items:start;gap:12px}.document-stack{gap:15px}.slide-sheet{padding:15px}.slide-sheet strong{font-size:21px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
 
+.journey .journey-head{flex-wrap:wrap}.journey .tabs{flex-wrap:wrap;max-width:100%}.audit-prompt{border-top:1px solid #d6dfec;margin-top:20px;padding-top:20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}.audit-prompt p{max-width:52ch;font-weight:600}.audit-prompt .cta{white-space:normal}
 </style></head><body><a class="skip" href="#app">Перейти к содержанию</a><header><div class="wrap"><a class="brand" href="#home"><span class="mark" aria-hidden="true"></span>hosant<small>Процессы. Данные. ИИ.</small></a><nav aria-label="Навигация"><a href="#goals">Бизнес-цели</a><a href="#works">Примеры работ</a><a href="#audit">Как проходит аудит</a><a href="#brief">Разобрать процесс ↗</a></nav></div></header>
 <main class="wrap" id="app" tabindex="-1"></main><footer><div class="wrap"><span><span class="footer-brand">hosant</span> — автоматизация для торговли и производства</span><a href="#home">На главную ↑</a></div></footer>
 <template id="portfolio">
@@ -49,20 +50,47 @@ function tile(url,title,description,label=''){
  return '<a class="tile" href="#'+url+'">'+(label?'<span class="eyebrow">'+label+'</span>':'')+'<h3>'+title+'<span aria-hidden="true">↗</span></h3><p>'+description+'</p></a>';
 }
 function home(){
- app.innerHTML='<section class="hero"><p class="eyebrow">Торговля и производство</p><div class="hero-top"><h1>Готовим компанию к работе с ИИ-агентами</h1><div><p class="lead">Находим, где заказ ждёт решения человека. Связываем данные и меняем правила работы, чтобы типовые задачи проходили самостоятельно.</p><a class="cta" href="#brief">Разобрать мой процесс</a><p class="hero-note">Начинаем с одного реального заказа</p></div></div><section class="journey" aria-label="Путь заказа: учебный пример" data-after="false"><div class="journey-head"><div><p class="scenario-label">Один заказ. Пять точек принятия решения.</p><h2>«40 фильтров в Казань. Успеете к пятнице?»</h2></div><div class="tabs" role="group" aria-label="Режим примера"><button type="button" aria-pressed="true">Как сейчас</button><button type="button" aria-pressed="false">После изменений</button></div></div><ol class="route-track"></ol><div class="journey-foot"><div class="reply" aria-live="polite"></div><a href="#case/2/0">Разобрать сценарий ↗</a></div></section></section><section class="band" id="goals"><div class="section-head"><h2>От бизнес-цели<br>к изменениям в процессе</h2><p>Выберите задачу. Покажем, какие данные и правила понадобятся агенту и как проверить результат.</p></div><div class="grid">'+goals.map((g,i)=>tile('goal/'+i,g.title,summaries[i])).join('')+'</div></section><section class="band audit" id="audit"><h2>С чего начинается аудит</h2><div><ol><li><b>Берём недавний заказ.</b> Прослеживаем его от запроса до результата. Отмечаем системы, ожидания и решения сотрудников.</li><li><b>Разбираем ручные решения.</b> Выясняем, кто отвечает за данные, какое правило действует и кому передают исключения.</li><li><b>Согласуем план изменений.</b> Выбираем пилот, исходный показатель, границы автономной работы и способ проверки.</li></ol><a href="#brief">Подготовить задачу для разбора →</a></div></section>';
+ app.innerHTML='<section class="hero"><p class="eyebrow">Торговля и производство</p><div class="hero-top"><h1>Готовим компанию к работе с ИИ-агентами</h1><div><p class="lead">Находим, где заказ ждёт решения человека. Связываем данные и меняем правила работы, чтобы типовые задачи проходили самостоятельно.</p><a class="cta" href="#brief">Разобрать мой процесс</a><p class="hero-note">Начинаем с одного реального заказа</p></div></div><section class="journey" aria-label="Путь заказа: учебный пример" data-after="false"><div class="journey-head"><div><p class="scenario-label">Один заказ. Пять точек принятия решения.</p><h2>«40 фильтров в Казань. Успеете к пятнице?»</h2></div><div class="tabs" role="group" aria-label="Режим примера"><button type="button" aria-pressed="true">Вручную</button><button type="button" aria-pressed="false">Агент готовит черновик</button><button type="button" aria-pressed="false">Процесс перестроен</button></div></div><ol class="route-track"></ol><div class="journey-foot"><div class="reply" aria-live="polite"></div><a href="#case/2/0">Разобрать сценарий ↗</a></div><div class="audit-prompt"><p>Кто в вашей компании может пообещать клиенту срок поставки и на основании каких данных?</p><a class="cta" href="#brief/2/0">Разобрать свой заказ →</a></div></section></section><section class="band" id="goals"><div class="section-head"><h2>От бизнес-цели<br>к изменениям в процессе</h2><p>Выберите задачу. Покажем, какие данные и правила понадобятся агенту и как проверить результат.</p></div><div class="grid">'+goals.map((g,i)=>tile('goal/'+i,g.title,summaries[i])).join('')+'</div></section><section class="band audit" id="audit"><h2>С чего начинается аудит</h2><div><ol><li><b>Берём недавний заказ.</b> Прослеживаем его от запроса до результата. Отмечаем системы, ожидания и решения сотрудников.</li><li><b>Разбираем ручные решения.</b> Выясняем, кто отвечает за данные, какое правило действует и кому передают исключения.</li><li><b>Согласуем план изменений.</b> Выбираем пилот, исходный показатель, границы автономной работы и способ проверки.</li></ol><a href="#brief">Подготовить задачу для разбора →</a></div></section>';
  app.querySelector('#audit').before(document.querySelector('#portfolio').content.cloneNode(true));
  const buttons=[...app.querySelectorAll('.tabs button')];
- function demo(after){
- buttons.forEach((b,i)=>b.setAttribute('aria-pressed',String(i===after)));
- app.querySelector('.journey').dataset.after=String(Boolean(after));
- const steps=after?[
- ['Запрос','Позиции и количество распознаны'],['Подбор','Артикул связан с каталогом'],['Остаток','Свободный остаток проверен'],['Доставка','Срок подтверждён данными'],['Предложение','Готово при выполнении условий']
- ]:[['Запрос','Письмо от покупателя'],['Подбор','Менеджер уточняет артикул'],['Остаток','Проверка резерва в 1С'],['Доставка','Звонок логисту о сроке'],['Предложение','Клиент ждёт ответа']];
- app.querySelector('.route-track').innerHTML=steps.map((step,i)=>'<li class="'+(!after&&i>0?'waiting':'')+'"><span class="node-dot" aria-hidden="true">'+(after?'✓':i+1)+'</span><h3>'+step[0]+'</h3><p>'+step[1]+'</p></li>').join('');
-
- app.querySelector('.reply').innerHTML=after?'<strong>Ответ по согласованным правилам</strong>Агент сверяет свободный остаток, цену и срок перевозчика. Подтверждает дату только при совпадении всех условий.':'<strong>«Уточню и вернусь с ответом»</strong>Менеджер находит артикул в письме, проверяет резерв в 1С и звонит логисту, чтобы подтвердить срок.';
+ const stageNames=['Запрос','Подбор','Остаток','Доставка','Предложение'];
+ const modes=[
+  {steps:['Покупатель прислал письмо','Менеджер уточняет артикул','Сверяет остаток и резервы','Звонит логисту','Сам собирает и отправляет КП'],
+   title:'Клиент ждёт, пока менеджер соберёт ответ.',
+   result:'Чтобы назвать срок, нужно уточнить, какие фильтры нужны, есть ли свободные 40 штук и успеет ли машина.'},
+  {steps:['Менеджер разбирает письмо','Вводит артикул для агента','Агент подставляет остаток из 1С','Менеджер уточняет дату','Агент пишет черновик КП'],
+   title:'Черновик готов. Обещать пятницу пока может только менеджер.',
+   result:'На входе сотрудник уточнил артикул. На выходе он проверяет резерв, подтверждает доставку у логиста и только потом отправляет предложение.'},
+  {steps:['Агент читает заявку','Находит артикул по справочнику','Вычитает действующие резервы','Проверяет срок перевозчика','Отправляет подтверждённое КП'],
+   title:'По типовому заказу клиент получает ответ без ожидания менеджера.',
+   result:'Продажи и склад согласовали справочник и правила резерва. Логистика определила источник срока. Если артикул однозначен, товар свободен и перевозчик подтвердил пятницу, агент отправляет КП сам. Если дата неизвестна, запрос уходит логисту.'}
+ ];
+ function showMode(index){
+  const mode=modes[index];
+  buttons.forEach((button,i)=>button.setAttribute('aria-pressed',String(i===index)));
+  app.querySelector('.journey').dataset.after=String(index===2);
+  const track=app.querySelector('.route-track');
+  track.replaceChildren();
+  mode.steps.forEach((description,i)=>{
+   const step=document.createElement('li');
+   if((index===0 && i>0)||(index===1 && [1,3].includes(i)))step.className='waiting';
+   const marker=document.createElement('span');
+   marker.className='node-dot';
+   marker.setAttribute('aria-hidden','true');
+   marker.textContent=index===2?'✓':String(i+1);
+   const title=document.createElement('h3');
+   title.textContent=stageNames[i];
+   const text=document.createElement('p');
+   text.textContent=description;
+   step.append(marker,title,text);
+   track.append(step);
+  });
+  const lead=document.createElement('strong');
+  lead.textContent=mode.title;
+  app.querySelector('.reply').replaceChildren(lead,document.createTextNode(mode.result));
  }
- buttons.forEach((b,i)=>b.onclick=()=>demo(i));demo(0);
+ buttons.forEach((button,i)=>button.addEventListener('click',()=>showMode(i)));
+ showMode(0);
 }
 function crumbs(links){return '<div class="crumb">'+links.join(' &nbsp;›&nbsp; ')+'</div>'}
 const topLink='<a href="#goals">Бизнес-цели</a>';

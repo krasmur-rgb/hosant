@@ -11,30 +11,20 @@
 
 header .hosant-brand{display:inline-flex;align-items:center;gap:10px;color:#172a42;text-decoration:none;font:700 25px/1.1 Arial,sans-serif;letter-spacing:-1px;white-space:nowrap}header .hosant-symbol{display:block;flex:none}
 </style>
-</head>
+<link rel="stylesheet" href="visuals.css"></head>
 <body>
 <header><div class="wrap"><a class="brand hosant-brand" href="index.html#home" aria-label="Hosant — на главную"><svg class="hosant-symbol" width="34" height="34" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><rect width="40" height="40" rx="9" fill="#244db5"/><path fill="#fff" d="M9 10h6v9l10-4v-5h6v20h-6v-9l-10 4v5H9z"/></svg><span>Hosant</span></a><a href="index.html#brief">Описать свой процесс</a></div></header>
 <main class="wrap">
-<div class="hero"><p class="kicker">Подход · AI-native компания</p><h1>На неподготовленных данных агенту нельзя доверить заказ</h1>
-<p class="lead">На входе менеджер объясняет агенту, что имел в виду клиент. На выходе проверяет, можно ли отправить ответ. Черновик появился быстрее, но заказ по-прежнему ждёт человека. Чтобы передать агенту весь типовой процесс, компании нужны достоверные данные и правила, по которым можно действовать.</p></div>
-<section class="demo" aria-labelledby="demo-title"><p class="kicker">Учебный заказ</p><h2 id="demo-title">«Нужны 40 фильтров к пятнице»</h2>
-<fieldset class="choices"><legend>Какие данные доступны агенту?</legend><label><input type="radio" name="data" value="raw" checked>Как есть</label><label><input type="radio" name="data" value="ready">После перестройки</label></fieldset>
-<div aria-live="polite">
-<div class="case" id="raw"><article><h3>Что видно в системах</h3><dl><dt>Товар</dt><dd>В письме — «наш обычный фильтр». В каталоге две похожие позиции.</dd><dt>Остаток</dt><dd>На складе 50 штук. Резервы продавцы ведут в отдельной таблице.</dd><dt>Срок</dt><dd>Дату доставки подтверждает логист по телефону.</dd></dl></article><article><h3>Что получает клиент</h3><p class="reply">«Уточним наличие и вернёмся с датой».</p><p class="human">Агент может составить письмо. Менеджеру всё ещё нужно найти артикул, сверить резервы и получить обещание логиста. Если агент сразу пообещает все 40 штук к пятнице, у него не будет оснований для этого.</p></article></div>
-<div class="case" id="ready" hidden><article><h3>Что изменилось в процессе</h3><dl><dt>Товар</dt><dd>Название клиента связано с утверждённым артикулом в справочнике.</dd><dt>Остаток</dt><dd>Учётная система видит 50 штук, из них 20 в резерве. Для этого заказа свободно 30.</dd><dt>Срок</dt><dd>Перевозчик подтвердил доставку 30 штук к пятнице. Срок пополнения остальных пока неизвестен.</dd></dl></article><article><h3>Что получает клиент</h3><p class="reply">«К пятнице можем поставить 30 из 40 фильтров. Подойдёт частичная поставка?»</p><p class="human">По согласованному регламенту агент вправе предложить доступную партию. Для остальных 10 он открыл запрос в закупки. Ответ клиенту уходит самостоятельно, исключение получает конкретный ответственный.</p></article></div></div></section>
-<section class="change rule"><div><p class="kicker">От аудита до запуска</p><h2>Что предстоит изменить компании</h2></div><ol>
-<li><strong>Провести заказ через все отделы.</strong> На реальных примерах выяснить, кто расшифровывает вход, перепроверяет выход и принимает решение при расхождениях. Зафиксировать время и ошибки на всём пути.</li>
-<li><strong>Назначить владельцев данных.</strong> Склад отвечает за остатки и резервы, продажи — за соответствие артикулов, логистика — за подтверждение даты. Для каждого поля определить источник, срок обновления и порядок исправления.</li>
-<li><strong>Пересобрать регламент для цифровой среды.</strong> Описать условия решения, полномочия и исключения. Резерв, частичная поставка и запрос в закупки должны оставлять запись в системе с владельцем и статусом.</li>
-<li><strong>Проверить процесс на реальных заказах.</strong> Сначала сравнить решения агента с решениями сотрудников. Согласовать допустимые ошибки и только затем передавать агенту самостоятельные действия в проверенных границах.</li></ol></section>
-<section><div class="measure"><h2>Как проверить, что работа действительно изменилась</h2><p>Сравните похожие заказы до и после пилота: сколько минут сотрудники потратили от получения письма до подтверждённого ответа, какая доля заказов прошла без ручных уточнений и сколько обещанных сроков пришлось исправить.</p><a class="action" href="index.html#brief/2/0">Начать аудит с одного заказа →</a></div></section>
+<section class="stock-intro"><div><p class="kicker">Учебный заказ · 40 фильтров к пятнице</p>
+<h1>На складе 50. Продать можно 30.</h1><p class="lead">Двадцать фильтров уже обещали другому клиенту. Пока резерв записан в отдельной таблице, агент видит все пятьдесят.</p></div>
+<img src="assets/stock.webp" width="800" height="800" alt="Пять коробок по десять фильтров. Две коробки с красной лентой уже в резерве."></section>
+<section class="visual-section"><h2>Что на самом деле доступно</h2>
+<div class="stock-bar" aria-label="Из 50 фильтров 30 свободны, 20 в резерве"><span class="free">30 свободны</span><span class="held">20 в резерве</span></div></section>
+<section class="visual-section"><h2>Клиент запросил 40 штук</h2>
+<ul class="order-paths"><li><h3>30 → предложить клиенту</h3><p>Перевозчик подтвердил пятницу. По правилам продаж агент вправе предложить частичную поставку.</p></li><li><h3>10 → запросить закупки</h3><p>Срок пополнения неизвестен. Закупщик уточняет дату у поставщика.</p></li></ul>
+<blockquote class="decision-box">«К пятнице можем доставить 30 фильтров из 40. Подойдёт частичная поставка?»</blockquote></section>
+<section class="visual-section"><h2>Какие данные пришлось связать</h2>
+<dl class="process-grid"><div><dt>Продажи · артикул</dt><dd>Связали «наш обычный фильтр» с конкретной позицией каталога.</dd></div><div><dt>Склад · резерв</dt><dd>Закрепили резерв за заказом. Он сразу уменьшает доступный остаток.</dd></div><div><dt>Логистика · рейс</dt><dd>Подтверждённые количество и дата относятся к тому же заказу.</dd></div></dl></section>
+<section class="visual-section"><h2>Что измерить на пилоте</h2><ul class="metrics-list"><li>Минуты ручной работы на заказ</li><li>Доля заказов без уточнений</li><li>Число исправленных обещаний по срокам</li></ul><a class="action" href="index.html#brief/2/0">Разобрать свой заказ →</a></section>
 </main><footer><div class="wrap"><span>Подготовка процессов к работе с ИИ</span><a href="index.html#audit">Как проходит аудит</a></div></footer>
-<script>
-const options=document.querySelectorAll('input[name="data"]');
-function showCase(){
- const active=document.querySelector('input[name="data"]:checked').value;
- for(const option of options)document.getElementById(option.value).hidden=option.value!==active;
-}
-for(const option of options)option.addEventListener('change',showCase);
-window.addEventListener('pageshow',showCase);
-</script></body></html>
+</body></html>

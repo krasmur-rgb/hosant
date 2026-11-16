@@ -33,3 +33,90 @@
 .metrics-list{list-style:none;padding:0;margin-bottom:24px}
 .metrics-list li{border-top:2px solid #8595ab;padding-top:10px}
 @media(max-width:680px){.story-hero,.stock-intro{grid-template-columns:1fr;gap:20px}.story-hero img,.stock-intro img{aspect-ratio:1.7}.fact-table td,.fact-table th{padding:10px 8px}.goals-table{font-size:.88rem}.audit-card dl,.process-grid,.metrics-list,.order-paths{grid-template-columns:1fr;gap:14px}.stock-bar{font-size:.9rem}.visual-section h2{margin-bottom:16px}}
+
+.factory-hero {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  align-items: center;
+  min-height: 430px;
+  aspect-ratio: 16 / 9;
+  margin-bottom: clamp(24px, 4vw, 52px);
+  background: #f8f1e9;
+  color: #252e34;
+}
+.factory-scene {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.factory-copy {
+  box-sizing: content-box;
+  width: 32%;
+  padding: 35px 0 35px 3.3%;
+}
+header .brand-tagline {
+  margin-inline-start: 6px;
+  padding-inline-start: 16px;
+  border-inline-start: 1px solid #bac4c8;
+  font: 500 1rem/1.25 Arial, sans-serif;
+  letter-spacing: -.015em;
+  white-space: normal;
+  color: #3e505b;
+}
+@media (max-width: 680px) {
+  header .brand-tagline {
+    max-width: 16ch;
+    font-size: .84rem;
+    margin-inline-start: 2px;
+    padding-inline-start: 12px;
+  }
+}
+@font-face {
+  font-family: "Exo 2";
+  src: url("assets/fonts/Exo2.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+.factory-copy h1 {
+  font-family: "Exo 2", Arial, sans-serif;
+  font-weight: 600;
+  font-size-adjust: from-font;
+  font-size: clamp(40px, 3.65vw, 58px);
+  line-height: 1.02;
+  letter-spacing: -.035em;
+  color: inherit;
+}
+.factory-message {
+  max-width: 23ch;
+  margin: 18px 0 26px;
+  font-size: clamp(18px, 1.52vw, 24px);
+  line-height: 1.3;
+}
+.factory-copy .cta {
+  background: #344853;
+  color: #fff;
+  border-radius: 4px;
+}
+.factory-copy .cta:hover { background: #23343d; }
+@media (max-width: 800px) {
+  .factory-hero {
+    aspect-ratio: auto;
+    min-height: 0;
+  }
+  .factory-copy {
+    grid-row: 1;
+    width: auto;
+    padding: 30px clamp(18px, 5vw, 40px) 22px;
+  }
+  .factory-scene {
+    position: static;
+    grid-row: 2;
+    height: auto;
+  }
+  .factory-message { max-width: 34ch; margin: 14px 0 20px; }
+}

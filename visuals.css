@@ -103,6 +103,28 @@ header .brand-tagline {
   border-radius: 4px;
 }
 .factory-copy .cta:hover { background: #23343d; }
+@media (min-width: 1440px) {
+  body:has(.factory-hero) {
+    --hero-width: clamp(1240px, min(87vw, calc(177.78svh - 220px)), 2240px);
+  }
+  body:has(.factory-hero) header .wrap,
+  .factory-hero {
+    width: var(--hero-width);
+  }
+  .factory-hero {
+    margin-inline: calc((100% - var(--hero-width)) / 2);
+    container-type: inline-size;
+  }
+  .factory-copy h1 {
+    font-size: clamp(48px, 4.05cqi, 90px);
+  }
+  .factory-message {
+    font-size: clamp(20px, 1.65cqi, 36px);
+  }
+  .factory-copy .cta {
+    font-size: clamp(14px, 1cqi, 19px);
+  }
+}
 @media (max-width: 800px) {
   .factory-hero {
     aspect-ratio: auto;

@@ -40,6 +40,31 @@ header .hosant-brand{display:inline-flex;align-items:center;gap:10px;color:#172a
   </div>
   <a class="story-link" href="ai-native.html">Какую поставку агент может обещать клиенту? →</a>
 </section>
+<section class="visual-section integration" id="integration">
+  <div class="integration-intro">
+    <h2>Подключить ИИ проще, чем получить результат</h2>
+    <p>Агент уже умеет составить ответ. Но пока менеджер сверяет остаток вручную и звонит логисту, клиент по-прежнему ждёт.</p>
+    <p>В Hosant мы разбираем с вашей командой весь путь заказа и проверяем, где ИИ действительно сэкономит время и деньги.</p>
+  </div>
+  <div class="integration-factors">
+    <div>
+      <h3>Каким данным можно верить?</h3>
+      <p>Склад показывает 50 фильтров, а 20 из них уже обещали другому клиенту. Связываем остатки с резервами. На прошлых заказах вместе с менеджером проверяем, какое количество агент вправе предложить.</p>
+    </div>
+    <div>
+      <h3>Кто отвечает перед клиентом?</h3>
+      <p>Обещание доставить к пятнице придётся выполнять. Согласуем, какие данные доступны агенту, когда срок должен подтвердить логист и где сохранить его решение на случай спора.</p>
+    </div>
+    <div>
+      <h3>Что изменится для команды?</h3>
+      <p>Менеджер продолжит звонить на склад, если не доверяет остатку на экране. Разбираем такие заказы вместе с сотрудниками. Руководитель утверждает, когда достаточно данных системы и кто разберёт спорный случай.</p>
+    </div>
+    <div>
+      <h3>Оправдаются ли затраты?</h3>
+      <p>Начинаем с одного процесса. Сравниваем стоимость обработки похожих заказов до и во время пилота, включая ручные проверки и работу агента. По объёму заказов и затратам на запуск и сопровождение оцениваем срок окупаемости.</p>
+    </div>
+  </div>
+</section>
 <section class="visual-section" id="goals"><h2 id="goals-title">Что вы хотите изменить?</h2>
   <div class="table-frame"><table class="fact-table goals-table" aria-labelledby="goals-title">
     <thead><tr><th scope="col">Бизнес-цель</th><th scope="col">Торговля</th><th scope="col">Производство</th></tr></thead>
@@ -132,7 +157,7 @@ function route(){
  else home();
  document.title=app.querySelector('h1').textContent+' · ИИ для бизнеса';
  if(path==='app')app.focus({preventScroll:true});
- if(['goals','audit','works','work-catalog','work-proposal','work-1c'].includes(path))document.getElementById(path).scrollIntoView();
+  if(['integration','goals','audit','works','work-catalog','work-proposal','work-1c'].includes(path))document.getElementById(path).scrollIntoView();
  else window.scrollTo(0,0);
 }
 window.addEventListener('hashchange',()=>{route();app.focus({preventScroll:true})});route();

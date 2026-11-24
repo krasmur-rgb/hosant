@@ -86,6 +86,17 @@
   width: 32%;
   padding: 35px 0 35px 3.3%;
 }
+header .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+header .brand-logo {
+  display: block;
+  flex: none;
+  object-fit: cover;
+}
 header .brand-tagline {
   margin-inline-start: 6px;
   padding-inline-start: 16px;
